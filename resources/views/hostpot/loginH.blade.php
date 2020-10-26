@@ -76,14 +76,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#"> </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         {{-- <li class="active"><a href="#">Home</a></li> --}}
-        <li><a href="#">Acerca</a></li>
+        <li><a href="#"></a></li>
        {{--  <li><a href="#">Projects</a></li> --}}
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#"></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --}}
@@ -194,39 +194,28 @@
 //-->
 </script>
 
-{{-- <div class="container text-center">   
+ <div class="container text-center">   
 
  
-  <h3>What We Do</h3>
+  
   <br>
-  <div class="row">
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-3"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>  
-  </div>
+  <center>
+    <div class="w3-content" style="max-width:400px">
+
+      @foreach ($banners as $key => $item) 
+      
+    <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%">
+      
+      @endforeach
+  
+
+ 
+
+</div>
+  </center>
+  
   <hr>
-</div> --}}
+</div>
 
 <div class="container text-center">    
   <h3></h3>
@@ -269,7 +258,22 @@
 </body>
 </html>
 
+<script>
+var slideIndex = 0;
+carousel();
 
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1} 
+  x[slideIndex-1].style.display = "block"; 
+  setTimeout(carousel, 2000); 
+}
+</script>
 
 
 

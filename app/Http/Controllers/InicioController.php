@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Carrusel;
+use App\Publicidad;
 use Illuminate\Http\Request;
 use RouterOS\Client;
 use RouterOS\Config;
@@ -87,7 +88,8 @@ class InicioController extends Controller
     $macesc=$request['mac-esc'];
 
     $carruseles = Carrusel::all();
-       return view('hostpot/loginH',compact('carruseles'));
+    $banners = Publicidad::all();
+       return view('hostpot/loginH',compact('carruseles','banners'));
 
        /* return view('hostpot/loginH',compact(
             'mac',

@@ -31,4 +31,5 @@ Route::get('/home', 'HomeController@index')->name('home'); */
 
 Route::resource('Carrusel','CarruselController');
 Route::resource('usuario','UserController');
+Route::resource('banners','BannersController');
 
