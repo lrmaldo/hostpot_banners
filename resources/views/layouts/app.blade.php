@@ -108,13 +108,13 @@
                         @else
                         @if(Auth::user()->hasRole('admin'))
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Usuarios</a>
+                            <a class="nav-link" href="{{url('usuario')}}">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Carrusel</a>
+                            <a class="nav-link" href="{{url('home')}}">Carrusel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Imagenes publicidad</a>
+                            <a class="nav-link" href="#">Banners Inferior</a>
                         </li>
                         <li class="nav-item">
                             <a  data-toggle="modal" data-target="#ModalExcel" class="nav-link" href="#" >Config.</a>

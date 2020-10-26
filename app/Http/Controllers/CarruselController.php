@@ -116,6 +116,12 @@ class CarruselController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carrusel = Carrusel::find($id);
+         /* si exite la imagen */
+         if(file_exists(".".$carrusel->url_image)){
+            unlink(".".$carrusel->url_imagen);
+        }
+        Carrusel::destroy($id);
+        return redirect('home')->with('success','Se elimino Correctamente');
     }
 }

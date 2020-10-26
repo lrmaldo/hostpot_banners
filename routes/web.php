@@ -30,4 +30,5 @@ Route::get('/ip_add','InicioController@ip_add');
 Route::get('/home', 'HomeController@index')->name('home'); */
 
 Route::resource('Carrusel','CarruselController');
+Route::resource('usuario','UserController');
 

@@ -64,7 +64,7 @@
                         <td><div class="row">
                               <a data-target="#ModalEditCarrusel-{{$item->id}}" data-toggle="modal" class="btn btn-outline-primary btn-lg" ><i class="fa fa-edit"></i></ion-icon></a>
                               <p  style="margin-right: 10%"></p>
-                              <a data-target="#Modal_eliminar-{{$item->id}}" data-toggle="modal" class="btn btn-outline-danger btn-lg"> <i class="fa fa-trash" style="color:rgb(230, 8, 8)"></i></a>
+                              <a data-target="#ModalEliminar-{{$item->id}}" data-toggle="modal" class="btn btn-outline-danger btn-lg"> <i class="fa fa-trash" style="color:rgb(230, 8, 8)"></i></a>
                            </div>
                        </td>
                             @include('Carrusel.modal.modal_edit') 

@@ -20,7 +20,7 @@ class CreateConfiguracionsTable extends Migration
             $table->string('telefono');
             $table->string('correo');
             $table->string('facebook');
-            $table->string('whatsapp');
+            $table->string('direccion');
             $table->timestamps();
         });
     }
