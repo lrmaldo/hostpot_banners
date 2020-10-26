@@ -14,7 +14,7 @@
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                   <form class="form-horizontal" role="form" method="post"
-                      action="{{ route('Carrusel.destroy',$item->id) }}">
+                      action="{{ route('banners.destroy',$item->id) }}">
                       <input type="hidden" name="_method" value="DELETE">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       <input class="btn btn-danger btn-xs" type="submit" value="Eliminar" />
