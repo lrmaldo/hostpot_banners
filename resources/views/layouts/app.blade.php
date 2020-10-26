@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Vistas de las Torres Sattlink" />
+    <meta name="description" content="Hostpot publicidad" />
       <meta name="author" content="Ing. Leonardo Maldonado López" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="img/torre.ico" />
-    <title>Torres-Sattlink</title>
+    <title>Hostpot-Sattlink</title>
 
     <!-- Styles -->
     {{--
@@ -108,10 +108,16 @@
                         @else
                         @if(Auth::user()->hasRole('admin'))
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Exportar Excel</a>
+                            <a class="nav-link" href="#">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <a  data-toggle="modal" data-target="#ModalExcel" class="nav-link" href="#" >Importar Datos</a>
+                            <a class="nav-link" href="#">Carrusel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Imagenes publicidad</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  data-toggle="modal" data-target="#ModalExcel" class="nav-link" href="#" >Config.</a>
                         </li>
                         @else
                         <li class="nav-item">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Carrusel;
 use Illuminate\Http\Request;
 use RouterOS\Client;
 use RouterOS\Config;
@@ -85,7 +86,8 @@ class InicioController extends Controller
     $linkorigesc=$request['link-orig-esc'];
     $macesc=$request['mac-esc'];
 
-       return view('hostpot/loginH');
+    $carruseles = Carrusel::all();
+       return view('hostpot/loginH',compact('carruseles'));
 
        /* return view('hostpot/loginH',compact(
             'mac',

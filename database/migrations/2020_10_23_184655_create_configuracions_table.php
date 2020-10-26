@@ -15,6 +15,12 @@ class CreateConfiguracionsTable extends Migration
     {
         Schema::create('configuracions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre')->comments('nombre de la empresa');
+            $table->string('url_imagen');
+            $table->string('telefono');
+            $table->string('correo');
+            $table->string('facebook');
+            $table->string('whatsapp');
             $table->timestamps();
         });
     }
