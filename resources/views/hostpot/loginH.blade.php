@@ -135,6 +135,11 @@
             <br /><div style="color: #FF8080; font-size: 9px"><?php echo $error; ?></div>
             <!-- $(endif) -->
       </form>
+
+      <!-- $(if trial == 'yes') -->
+Prueba el internet <a class="btn btn-info"   href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</a>
+<!-- $(endif) -->
+
   </div>
 </div>
 <hr>
@@ -290,6 +295,13 @@ function carousel1() {
       </a>
     </div>
     @endif
+
+
+
+
+login ***********************************************************
+
+
 
 --}}
 
