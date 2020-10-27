@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::POST('/post_hostpot','InicioController@host');
+Route::POST('/post_hotspot','InicioController@host');
 
 Route::get('/login_hostpot','Iniciocontroller@loginHost');
 Route::get('/home', 'HomeController@index')->name('home');
