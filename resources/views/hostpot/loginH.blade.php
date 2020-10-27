@@ -137,7 +137,7 @@
       </form>
 
       <!-- $(if trial == 'yes') -->
-Prueba el internet <a class="btn btn-info"   href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</a>
+Conectate gratis <a class="btn btn-info"   href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</a>
 <!-- $(endif) -->
 
   </div>
