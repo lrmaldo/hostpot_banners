@@ -33,3 +33,6 @@ Route::resource('Carrusel','CarruselController');
 Route::resource('usuario','UserController');
 Route::resource('banners','BannersController');
 
+Route::get('politica',function(){
+    return view('politicas');
+});

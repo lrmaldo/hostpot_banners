@@ -19,9 +19,10 @@
   @endphp
 
   <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
-  
+  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
   <script src="{{asset('/host/jquery.min.js')}}"></script>
   <script src="{{asset('/host/js/bootstrap.min.js')}}"></script>
+  
 
 
   <style>
@@ -95,67 +96,18 @@
 <div class="container">
 <div class="row">
   <div class="col-sm-7">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        {{-- <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li> --}}
-        @foreach ($carruseles as $key => $item)
-        <li data-target="#myCarousel" data-slide-to="{{$item->id}}" class="@if($key == 0)active @endif"></li>
-        @endforeach
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        @foreach ($carruseles as $key => $item)
-        
-        <div class="item @if($key == 0)active @endif" >
- 
-          <picture>
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 1400px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 768px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 576px; max-height: 30%;)">
-          
-          <img class="image" class="mh-100" srcset="{{asset($item->url_imagen)}}" style="
-           
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            margin: auto;
-          ">
-          </picture>
-            
-          
-         
-          <div class="carousel-caption">
-           {{--  <h3>Sell $</h3>
-            <p>Money Money.</p> --}}
-          </div>      
-        </div>
-        {{-- manuel garcia  --}}
-        @endforeach
-       
-
-      {{--   <div class="item"> style="width: 100%; height:auto;"
-          <img src="https://placehold.it/800x400?text=Another Image Maybe" alt="Image">
-          <div class="carousel-caption">
-            <h3>More Sell $</h3>
-            <p>Lorem ipsum...</p>
-          </div>      
-        </div> --}}
-      </div>
+    {{--  aqui va el baner a lado de login --}}
+    <div class="w3-content w3-section" style="max-width:500px">
+      @foreach ($carruseles as $item)
+      <img class="mySlides1 w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
+       @endforeach
+      
+ 
+        </div>
 
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+
+    
   </div>
   <div class="col-sm-4">
     <!-- removed $(if chap-id) $(endif)  around OnSubmit -->
@@ -175,7 +127,7 @@
         </div>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Acepto los terminos y condiciones</label>
+        <label class="form-check-label" for="exampleCheck1"> <a href="{{url('politica')}}">Acepto los terminos y condiciones</a> </label>
         </div>
        
         <button type="submit" class="btn btn-primary">OK</button>
@@ -204,7 +156,7 @@
 
       @foreach ($banners as $key => $item) 
       
-    <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%">
+    <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
       
       @endforeach
   
@@ -228,26 +180,7 @@
       </div>
 
     </center>
-   {{--  <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 2</p>    
-    </div>
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 3</p>
-    </div>
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 4</p>
-    </div> 
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 5</p>
-    </div>     
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 6</p>
-    </div>  --}}
+  
   </div>
 </div><br>
 
@@ -262,22 +195,103 @@
 var slideIndex = 0;
 carousel();
 
+var slide = 0;
+carousel1();
+
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
+  
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none"; 
   }
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 2000); 
+  setTimeout(carousel, 10000); 
 }
+
+function carousel1() {
+  var i;
+  var x = document.getElementsByClassName("mySlides1");
+  
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none"; 
+  }
+  slide++;
+  if (slide > x.length) {slide = 1} 
+  x[slide-1].style.display = "block"; 
+  setTimeout(carousel1, 8000); 
+}
+
+
+
+
+
 </script>
 
 
 
 
+
+{{-- 
+ @if ($carruseles != null)
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        
+        @foreach ($carruseles as $key => $item)
+        <li data-target="#myCarousel" data-slide-to="{{$item->id}}" class="@if($key == 0)active @endif"></li>
+        @endforeach
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        @foreach ($carruseles as $key => $item)
+        
+        <div class="item @if($key == 0)active @endif" >
+ 
+          <picture>
+            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 1400px;max-height: 30%;)">
+            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 768px;max-height: 30%;)">
+            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 576px; max-height: 30%;)">
+          
+          <img class="image" class="mh-100" srcset="{{asset($item->url_imagen)}}" style="
+           
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            margin: auto;
+          ">
+          </picture>
+            
+          
+         
+          <div class="carousel-caption">
+          
+          </div>      
+        </div>
+      
+        @endforeach
+       
+
+     
+      </div>
+    
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    @endif
+
+--}}
 
 
 
