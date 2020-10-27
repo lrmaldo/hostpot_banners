@@ -137,7 +137,7 @@
       </form>
 
       <!-- $(if trial == 'yes') -->
-Conectate gratis <a class="btn btn-info"   href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</a>
+Conectate gratis en:  <a class="btn btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
 <!-- $(endif) -->
 
   </div>
@@ -236,7 +236,7 @@ function carousel1() {
 </script>
 
 
-
+<script src="js/cuenta.js"></script>
 
 
 {{-- 
