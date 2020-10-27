@@ -213,7 +213,7 @@ function carousel() {
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 10000); 
+  setTimeout(carousel, 5600); 
 }
 
 function carousel1() {
@@ -226,7 +226,7 @@ function carousel1() {
   slide++;
   if (slide > x.length) {slide = 1} 
   x[slide-1].style.display = "block"; 
-  setTimeout(carousel1, 8000); 
+  setTimeout(carousel1, 5000); 
 }
 
 
