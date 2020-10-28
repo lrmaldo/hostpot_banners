@@ -55,7 +55,7 @@
 		<input type="hidden" name="popup" value="true" />
 	</form>
 	
-	<script type="text/javascript" src="./md5.js"></script>
+	<script type="text/javascript" src="{{asset('/js/md5.js')}}"></script>
 	<script type="text/javascript">
 	<!--
 	    function doLogin() {
