@@ -117,7 +117,7 @@
                             <a class="nav-link" href="{{url('banners')}}">Banners Inferior</a>
                         </li>
                         <li class="nav-item">
-                            <a  data-toggle="modal" data-target="#ModalExcel" class="nav-link" href="#" >Config.</a>
+                            <a  data-toggle="modal" data-target="#Modalconfig" class="nav-link" href="#" >Config.</a>
                         </li>
                         @else
                         <li class="nav-item">
@@ -153,6 +153,8 @@
                 </div>
 
             </div>
+
+            @include('modal_config')
 
         </nav>
 
