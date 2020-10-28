@@ -7,7 +7,23 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+
+
+
+# Hotspot Mikrotik  portal cautivo  con publicidad 
+
+archivo de login.html
+
+ sustituir la linea 10
+  - form name="redirect" action="http://localhost:8000/post_hotspot" method="post"
+
+  - insertar en el winbox el hotspot > Walled Garden 
+  poner dst. host el localhost o el link donde estara alojado este proyecto.
+
+## Laravel
+- version 5.4
+- php 5.6 >
+- Mysql 
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
