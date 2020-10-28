@@ -110,6 +110,12 @@
     
   </div>
   <div class="col-sm-4">
+    <!-- $(if trial == 'yes') -->
+    <div class="alert alert-success" role="alert">
+Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
+    </div>
+<!-- $(endif) -->
+
     <!-- removed $(if chap-id) $(endif)  around OnSubmit -->
 		<form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
 			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
@@ -136,9 +142,7 @@
             <!-- $(endif) -->
       </form>
 
-      <!-- $(if trial == 'yes') -->
-Conectate gratis en:  <a class="btn btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
-<!-- $(endif) -->
+   
 
   </div>
 </div>
