@@ -99,7 +99,7 @@
     {{--  aqui va el baner a lado de login --}}
     <div class="w3-content w3-section" style="max-width:500px">
       @foreach ($carruseles as $item)
-      <img class="mySlides1 w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
+      <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
        @endforeach
       
@@ -159,12 +159,12 @@ Conectate gratis en:  <a class="btn btn-primary disabled" id="gratis"  href="<?p
   <center>
     <div class="w3-content" style="max-width:400px">
 
-      @foreach ($banners as $key => $item) 
+    {{--   @foreach ($banners as $key => $item) 
       
     <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
       
       @endforeach
-  
+  --}}
 
  
 
@@ -200,8 +200,7 @@ Conectate gratis en:  <a class="btn btn-primary disabled" id="gratis"  href="<?p
 var slideIndex = 0;
 carousel();
 
-var slide = 0;
-carousel1();
+
 
 function carousel() {
   var i;
@@ -213,21 +212,9 @@ function carousel() {
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 2000); 
+  setTimeout(carousel, 4000); 
 }
 
-function carousel1() {
-  var i;
-  var x = document.getElementsByClassName("mySlides1");
-  
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  slide++;
-  if (slide > x.length) {slide = 1} 
-  x[slide-1].style.display = "block"; 
-  setTimeout(carousel1, 5000); 
-}
 
 
 
