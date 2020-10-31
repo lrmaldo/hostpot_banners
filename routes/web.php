@@ -36,3 +36,8 @@ Route::resource('banners','BannersController');
 Route::get('politica',function(){
     return view('politicas');
 });
+
+Route::get('preview',function(){
+    $carruseles = App\Carrusel::all();
+    return view('preview',compact('carruseles'));
+});
