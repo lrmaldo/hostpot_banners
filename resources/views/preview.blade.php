@@ -75,7 +75,8 @@
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login --}}
     <div class="w3-content w3-section" style="max-width:500px">
-      @foreach ($carruseles as $item)
+        
+      @foreach ($carruseles->shuffle() as $item)
       <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
        @endforeach

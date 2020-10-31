@@ -39,5 +39,6 @@ Route::get('politica',function(){
 
 Route::get('preview',function(){
     $carruseles = App\Carrusel::all();
+    
     return view('preview',compact('carruseles'));
 });
