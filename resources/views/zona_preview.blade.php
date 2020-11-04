@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Hostpot Login</title>
+  <title>Hotspot Login - vista previa</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  @php
-      $mac=$_POST['mac'];
-   $ip=$_POST['ip'];
-   $username=$_POST['username'];
-   $linklogin=$_POST['link-login'];
-   $linkorig=$_POST['link-orig'];
-   $error=$_POST['error'];
-   $chapid=$_POST['chap-id'];
-   $chapchallenge=$_POST['chap-challenge'];
-   $linkloginonly=$_POST['link-login-only'];
-   $linkorigesc=$_POST['link-orig-esc'];
-   $macesc=$_POST['mac-esc'];
-  @endphp
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hotspot vista previa" />
+      <meta name="author" content="Ing. Leonardo Maldonado López" />
+    <!-- CSRF Token -->
+    
+    <link rel="icon" type="image/x-icon" href="{{asset('img/torre.ico')}}" />
 
   <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
   <script src="{{asset('/host/jquery.min.js')}}"></script>
   <script src="{{asset('/host/js/bootstrap.min.js')}}"></script>
-  
+ 
 
 
   <style>
@@ -46,28 +39,9 @@
   </style>
 </head>
 <body>
-  <!-- $(if chap-id) -->
-
-	<form name="sendin" action="<?php echo $linkloginonly; ?>" method="post">
-		<input type="hidden" name="username" />
-		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
-		<input type="hidden" name="popup" value="true" />
-	</form>
+  
 	
-	<script type="text/javascript" src="{{asset('/js/md5.js')}}"></script>
-	<script type="text/javascript">
-	<!--
-	    function doLogin() {
-                <?php if(strlen($chapid) < 1) echo "return true;\n"; ?>
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('<?php echo $chapid; ?>' + document.login.password.value + '<?php echo $chapchallenge; ?>');
-		document.sendin.submit();
-		return false;
-	    }
-	//-->
-	</script>
-<!-- $(endif) -->
+	
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -94,10 +68,14 @@
 </nav>
 
 <div class="container">
+    <div class="alert alert-success" role="alert">
+ <strong> <h3 class="text-center">Vista previa </h3></strong>
+    </div>
 <div class="row">
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login --}}
     <div class="w3-content w3-section" style="max-width:500px">
+        
       @foreach ($carruseles->shuffle() as $item)
       <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
@@ -110,21 +88,21 @@
     
   </div>
   <div class="col-sm-4">
-    <!-- $(if trial == 'yes') -->
+   
     <div class="alert alert-success" role="alert">
-Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
+Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href=""><span id="countdown"></span></a>
     </div>
-<!-- $(endif) -->
 
-    <!-- removed $(if chap-id) $(endif)  around OnSubmit -->
-		<form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
-			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
+
+    
+		<form name="login" action="" method="post" onSubmit="return doLogin()" >
+			<input type="hidden" name="dst" value="" />
 			<input type="hidden" name="popup" value="true" />
   
         <p>Inicie sesión para utilizar el servicio mikrotik hotspot</p>
         <div class="form-group">
           <label for="exampleInputEmail1">Login</label>
-          <input name="username" type="text" value="<?php echo $username; ?>" class="form-control" id="username">
+          <input name="username" type="text" value="" class="form-control" id="username">
           <small id="emailHelp" class="form-text text-muted">.</small>
         </div>
         <div class="form-group">
@@ -136,9 +114,9 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
         <label class="form-check-label" for="exampleCheck1"> <a href="{{url('politica')}}">Acepto los terminos y condiciones</a> </label>
         </div>
        
-        <button type="submit" class="btn btn-primary">OK</button>
+        <button type="submit" class="btn btn-primary disabled">OK</button>
             <!-- $(if error) -->
-            <br /><div style="color: #FF8080; font-size: 9px"><?php echo $error; ?></div>
+            <br /><div style="color: #FF8080; font-size: 9px"></div>
             <!-- $(endif) -->
       </form>
 
@@ -150,9 +128,9 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
 </div>
 
 <script type="text/javascript">
-<!--
+
   document.login.username.focus();
-//-->
+
 </script>
 
  <div class="container text-center">   
@@ -162,13 +140,6 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
   <br>
   <center>
     <div class="w3-content" style="max-width:400px">
-
-    {{--   @foreach ($banners as $key => $item) 
-      
-    <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
-      
-      @endforeach
-  --}}
 
  
 

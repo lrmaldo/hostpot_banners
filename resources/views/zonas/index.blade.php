@@ -42,7 +42,8 @@
                             <th>Id</th>
                             <th>Nombre</th>
                            
-                            
+                            <th>Ruta</th>
+                            <th>Vista previa</th>
                             
                             <th>Accion</th>
                         </tr>
@@ -52,7 +53,8 @@
                         <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->nombre}}</td>
-                        
+                        <td>{{url('/').'/'.'hotspot_zona/'.$item->id}}</td>
+                        <td><a   target="_blank" href="{{url('/').'/'.'preview/'.$item->id}}">{{url('/').'/'.'preview/'.$item->id}}</a></td>
                         <td><div class="row">
                               <a data-target="#ModalEdit{{$item->id}}" data-toggle="modal" class="btn btn-outline-primary btn-lg" ><i class="fa fa-edit"></i></ion-icon></a>
                               <p  style="margin-right: 2%"></p>

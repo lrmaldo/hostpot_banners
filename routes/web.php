@@ -50,3 +50,9 @@ Route::get('preview',function(){
     
     return view('preview',compact('carruseles'));
 });
+
+Route::get('preview/{id}',function($id){
+    $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
+    
+    return view('zona_preview',compact('carruseles'));
+});
