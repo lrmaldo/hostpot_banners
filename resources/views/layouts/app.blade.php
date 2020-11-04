@@ -114,7 +114,7 @@
                             <a class="nav-link" href="{{url('home')}}">Carrusel</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('banners')}}">Banners Inferior</a>
+                            <a class="nav-link" href="{{url('zonas')}}">Zonas</a>
                         </li>
                         <li class="nav-item">
                             <a  data-toggle="modal" data-target="#Modalconfig" class="nav-link" href="#" >Config.</a>

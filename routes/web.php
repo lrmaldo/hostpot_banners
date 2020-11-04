@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::POST('/post_hotspot','InicioController@host');
 
+/* ruta con filtro de zona  */
+
+Route::POST('/hotspot_zona/{id}','InicioController@hotspot_zona');
 Route::get('/login_hostpot','Iniciocontroller@loginHost');
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -32,10 +35,15 @@ Route::get('/home', 'HomeController@index')->name('home'); */
 Route::resource('Carrusel','CarruselController');
 Route::resource('usuario','UserController');
 Route::resource('banners','BannersController');
+Route::resource('zonas','ZonasController');
+
+
 
 Route::get('politica',function(){
     return view('politicas');
 });
+
+
 
 Route::get('preview',function(){
     $carruseles = App\Carrusel::all();

@@ -117,4 +117,9 @@ class InicioController extends Controller
        $linkorigesc=$_POST['link-orig-esc'];
        $macesc=$_POST['mac-esc']; */
    }
+
+   public function hotspot_zona($id){
+    $carruseles = Carrusel::where('zona_id',$id)->get();
+    return view('hostpot.LoginZona',compact('carruseles'));
+   }
 }

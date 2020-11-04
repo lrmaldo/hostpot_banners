@@ -48,6 +48,7 @@ class CarruselController extends Controller
        
         $carrusel = new  Carrusel();
         $carrusel->url_imagen = '/imagenes/Carrusel/'.$nombre_imagen;
+        $carrusel->zona_id= $request->zona;
         $carrusel->save();
         return redirect('home')->with('success','Imagen de Carrusel guardado correctamente');
         }else{
@@ -104,7 +105,17 @@ class CarruselController extends Controller
                 return redirect('home')->with('success','Imagen de Carrusel guardado correctamente');
            
         }else{
-            return redirect('home')->with('error', 'No se importo correctamente la imagen');
+            if($request['activar'.$id]){
+                
+                $carrusel->activo = 1;
+            }else{
+                $carrusel->activo = 0;
+            }
+            $carrusel->zona_id = $request['zona'.$id];
+            $carrusel->save();
+            return redirect('home')->with('success','Datos de Carrusel guardado correctamente');
+            
+            //return redirect('home')->with('error', 'No se importo correctamente la imagen');
         }
     }
 

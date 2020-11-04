@@ -22,7 +22,25 @@
                         <input type="file" class="form-control" name="file" 
                         accept="image/png, image/jpeg">
                     </div>
+                    
+                     {{-- select de zonas --}}
+                     <div class="form-group ">
+                        <label for="exampleFormControlSelect1">Selecciona la zona donde aparecerá esta imagen</label>.
+                        <div class="col-md-12">
+                            <select class="form-control md-12" id="zona" name="zona" required>
 
+                             {{--    <option disabled  hidden>Seleccionar</option> --}}
+                                @foreach ($zonas as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nombre }}</option>
+
+                                @endforeach
+
+                            </select>
+                            <small>Si no aparece ninguna zona agregalo <a
+                                    href="{{ route('zonas.index') }}">aquí</a> </small>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

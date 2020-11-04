@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Carrusel;
+use App\zona;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $carruseles  = Carrusel::all();
+        $zonas = zona::all();
 
-        return view('home',compact('carruseles'));
+        return view('home',compact('carruseles','zonas'));
     }
 }

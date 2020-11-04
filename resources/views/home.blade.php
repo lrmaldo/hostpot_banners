@@ -45,13 +45,13 @@
             {{-- tabla --}}
     
             <div class="table-responsive-lg">
-                <table class="table " id="myTable"  cellspacing="0">
+                <table class="table table-image " id="myTable"  cellspacing="0">
                     <thead class="">
                         <tr>
                             <th>Id</th>
                             <th>Imagen</th>
-                            {{-- <th>Titulo</th> --}}
-                            
+                            <th>Zona</th>
+                            <th>Estado</th>
                             
                             <th>Accion</th>
                         </tr>
@@ -60,7 +60,13 @@
                         @foreach ($carruseles as $item)
                         <tr>
                         <td>{{$item->id}}</td>
-                        <td><img class="img-tabla" src="{{$item->url_imagen}}" alt="" ></td>
+                        <td style="width: 28%"><img class="img-thumbnail" src="{{$item->url_imagen}}"  alt="" ></td>
+                        <td>{{$item->zona->nombre}}</td>
+                        <td style="text-align: center">@if ($item->activo == 1)
+                            <span class="badge badge-pill badge-success">Activo</span>
+                          @else
+                          <span class="badge badge-pill badge-danger">No activo</span>
+                          @endif</td>
                         <td><div class="row">
                               <a data-target="#ModalEditCarrusel-{{$item->id}}" data-toggle="modal" class="btn btn-outline-primary btn-lg" ><i class="fa fa-edit"></i></ion-icon></a>
                               <p  style="margin-right: 10%"></p>
@@ -93,9 +99,12 @@
                 </table>
                 <style>
                     .img-tabla {
-      width: 40%; /* Set width to 100% */
-      max-height: 350px;
-    }
+                        width: 40%; /* Set width to 100% */
+                        max-height: 350px;
+                        }
+                      
+
+  
                 </style>
         </div>
       </div>
