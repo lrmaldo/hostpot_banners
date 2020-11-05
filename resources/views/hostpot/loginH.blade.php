@@ -82,16 +82,14 @@
 
 
 <div class="container">
-    <div class="alert alert-success" role="alert">
- <strong> <h3 class="text-center">Vista previa </h3></strong>
-    </div>
+    
 <div class="row justify-content-center h-100">
   @include('modal.ads')
 
   <div class="col-sm-4">
     <!-- $(if trial == 'yes') -->
     <div class="alert alert-success" role="alert">
-Conectate gratis   <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</span></a>
+Conectate gratis   <a class="btn btn-lg btn-primary " id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</span></a>
     </div>
 <!-- $(endif) -->
 
