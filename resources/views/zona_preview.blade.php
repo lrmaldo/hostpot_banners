@@ -122,21 +122,15 @@ Conectate gratis  <a class="btn btn-lg btn-primary " id="gratis"  href="">Aquí<
 
  
   
-  <br>
-  <center>
-    <div class="w3-content" style="max-width:400px">
-
+  
  
-
-</div>
-  </center>
   
  
 </div>
 
 <div class="container text-center">    
   <h3></h3>
-  <br>
+ 
   <div class=" text-center">
     <center>
       <div class=" ">
@@ -172,7 +166,7 @@ function carousel() {
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 2000); 
+  setTimeout(carousel, 3000); 
 }
 
 
