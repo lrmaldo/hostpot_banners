@@ -1,5 +1,15 @@
 window.onload = updateClock;
 
+
+
+ $(document).ready(function() {
+        $('#myModal').modal('toggle')
+    });
+    $('#myModal').modal({
+  keyboard: false,
+  backdrop: 'static'
+})
+
 document.getElementById("gratis").disabled = true;
 var totalTime = 10;
 function updateClock() {
@@ -7,12 +17,19 @@ document.getElementById('countdown').innerHTML = totalTime;
 if(totalTime==0){
 //alert('Final');
 $("#gratis").removeClass("disabled"); 
- document.getElementById('countdown').innerHTML ='Click aquí';
+ //document.getElementById('countdown').innerHTML ='Click aquí';
+  $('#myModal').modal('hide')
 }else{
 totalTime-=1;
 setTimeout("updateClock()",1000);
 }
 }
+
+
+
+
+
+
 
 /* 
 
