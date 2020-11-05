@@ -17,7 +17,7 @@ document.getElementById('countdown').innerHTML = totalTime;
 if(totalTime==0){
 //alert('Final');
 $("#gratis").removeClass("disabled"); 
- //document.getElementById('countdown').innerHTML ='Click aquí';
+ document.getElementById('countdown').innerHTML ='Click aquí';
   $('#myModal').modal('hide')
 }else{
 totalTime-=1;

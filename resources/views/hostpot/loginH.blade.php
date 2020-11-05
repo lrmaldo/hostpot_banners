@@ -3,22 +3,7 @@
 <head>
   <title>Hostpot Login</title>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hotspot vista previa" />
-      <meta name="author" content="Ing. Leonardo Maldonado López" />
-    <!-- CSRF Token -->
-    
-    <link rel="icon" type="image/x-icon" href="{{asset('img/torre.ico')}}" />
-
-  {{-- <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
-  <script src="{{asset('/host/jquery.min.js')}}"></script>
-  <script src="{{asset('/host/js/bootstrap.min.js')}}"></script> --}}
-  <link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
-<script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
-<script src="{{asset('/js/v4/popper.min.js')}}"></script>
-<script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   @php
       $mac=$_POST['mac'];
    $ip=$_POST['ip'];
@@ -33,6 +18,11 @@
    $macesc=$_POST['mac-esc'];
   @endphp
 
+  <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
+  <script src="{{asset('/host/jquery.min.js')}}"></script>
+  <script src="{{asset('/host/js/bootstrap.min.js')}}"></script>
+  
 
 
   <style>
@@ -79,17 +69,50 @@
 	</script>
 <!-- $(endif) -->
 
-
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        {{-- <li class="active"><a href="#">Home</a></li> --}}
+        <li><a href="#"></a></li>
+       {{--  <li><a href="#">Projects</a></li> --}}
+        <li><a href="#"></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --}}
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
+<div class="row">
+  <div class="col-sm-7">
+    {{--  aqui va el baner a lado de login --}}
+    <div class="w3-content w3-section" style="max-width:500px">
+      @foreach ($carruseles->shuffle() as $item)
+      <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
-<div class="row justify-content-center h-100">
-  @include('modal.ads')
+       @endforeach
+      
+ 
+        </div>
 
+
+    
+  </div>
   <div class="col-sm-4">
     <!-- $(if trial == 'yes') -->
     <div class="alert alert-success" role="alert">
-Conectate gratis   <a class="btn btn-lg btn-primary " id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>">Click aquí</span></a>
+Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
     </div>
 <!-- $(endif) -->
 
@@ -132,19 +155,32 @@ Conectate gratis   <a class="btn btn-lg btn-primary " id="gratis"  href="<?php e
 //-->
 </script>
 
-<div class="container text-center">   
+ <div class="container text-center">   
 
  
   
-  
+  <br>
+  <center>
+    <div class="w3-content" style="max-width:400px">
+
+    {{--   @foreach ($banners as $key => $item) 
+      
+    <img class="mySlides" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
+      
+      @endforeach
+  --}}
+
  
+
+</div>
+  </center>
   
- 
+  <hr>
 </div>
 
 <div class="container text-center">    
   <h3></h3>
- 
+  <br>
   <div class=" text-center">
     <center>
       <div class=" ">
@@ -180,7 +216,7 @@ function carousel() {
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 3000); 
+  setTimeout(carousel, 4000); 
 }
 
 
