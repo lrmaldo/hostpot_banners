@@ -11,11 +11,21 @@
     
     <link rel="icon" type="image/x-icon" href="{{asset('img/torre.ico')}}" />
 
-  <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
+ {{--  <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
   <script src="{{asset('/host/jquery.min.js')}}"></script>
-  <script src="{{asset('/host/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('/host/js/bootstrap.min.js')}}"></script> --}}
  
+  <link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
+  <script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
+  <script src="{{asset('/js/v4/popper.min.js')}}"></script>
+  <script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
+  <link
+    rel="stylesheet"
+href="{{asset('/css/animate.min.css')}}"
+  />
+<script src='{{asset('/js/a076d05399.js')}}'></script>
 
 
   <style>
@@ -24,11 +34,10 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
-
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      max-height: 450px;
+    .container {
+      margin-top: 1%;
     }
+   
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
     @media (max-width: 600px) {
@@ -40,33 +49,6 @@
 </head>
 <body>
   
-	
-	
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        {{-- <li class="active"><a href="#">Home</a></li> --}}
-        <li><a href="#"></a></li>
-       {{--  <li><a href="#">Projects</a></li> --}}
-        <li><a href="#"></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --}}
-      </ul>
-    </div>
-  </div>
-</nav>
-
 <div class="container">
     <div class="alert alert-success" role="alert">
  <strong> <h3 class="text-center">Vista previa </h3></strong>
@@ -92,10 +74,11 @@
     <div class="alert alert-success" role="alert">
 Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href=""><span id="countdown"></span></a>
     </div>
+    <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio Residencial</a>
 
 
     
-		<form name="login" action="" method="post" onSubmit="return doLogin()" >
+		<form class=""  name="login" action="" method="post" onSubmit="return doLogin()" >
 			<input type="hidden" name="dst" value="" />
 			<input type="hidden" name="popup" value="true" />
   
@@ -137,16 +120,9 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
 
  
   
-  <br>
-  <center>
-    <div class="w3-content" style="max-width:400px">
-
- 
-
-</div>
-  </center>
   
-  <hr>
+  
+ 
 </div>
 
 <div class="container text-center">    
@@ -155,7 +131,7 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
   <div class=" text-center">
     <center>
       <div class=" ">
-      <img src="{{asset('img/logo.png')}}" class="img-responsive" style="width:15%" alt="Image">
+      <img src="{{asset('img/logo.png')}}"  style="width:55%" alt="Image">
         {{-- <p>Partner 1</p> --}}
       </div>
 
@@ -198,7 +174,7 @@ function carousel() {
 </script>
 
 
-<script src="js/cuenta.js"></script>
+<script src="{{asset('js/cuenta.js')}}"></script>
 
 
 {{-- 

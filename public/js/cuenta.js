@@ -10,7 +10,7 @@ window.onload = updateClock;
   backdrop: 'static'
 })
 
-document.getElementById("gratis").disabled = true;
+//document.getElementById("gratis").disabled = true;
 var totalTime = 10;
 function updateClock() {
 document.getElementById('countdown').innerHTML = totalTime;

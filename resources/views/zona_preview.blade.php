@@ -11,15 +11,21 @@
     
     <link rel="icon" type="image/x-icon" href="{{asset('img/torre.ico')}}" />
 
-  {{-- <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
+ {{--  <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
   <script src="{{asset('/host/jquery.min.js')}}"></script>
   <script src="{{asset('/host/js/bootstrap.min.js')}}"></script> --}}
-  <link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
-<script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
-<script src="{{asset('/js/v4/popper.min.js')}}"></script>
-<script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
  
+  <link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
+  <script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
+  <script src="{{asset('/js/v4/popper.min.js')}}"></script>
+  <script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
+  <link
+    rel="stylesheet"
+href="{{asset('/css/animate.min.css')}}"
+  />
+<script src='{{asset('/js/a076d05399.js')}}'></script>
 
 
   <style>
@@ -28,11 +34,10 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
-
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      max-height: 450px;
+    .container {
+      margin-top: 1%;
     }
+   
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
     @media (max-width: 600px) {
@@ -44,19 +49,13 @@
 </head>
 <body>
   
-	
-	
-
-
-
 <div class="container">
     <div class="alert alert-success" role="alert">
  <strong> <h3 class="text-center">Vista previa </h3></strong>
     </div>
-<div class="row justify-content-center h-100">
-  @include('modal.ads')
-  {{-- <div class="col-sm-7">
-    
+<div class="row">
+  <div class="col-sm-7">
+    {{--  aqui va el baner a lado de login --}}
     <div class="w3-content w3-section" style="max-width:500px">
         
       @foreach ($carruseles->shuffle() as $item)
@@ -69,18 +68,17 @@
 
 
     
-  </div> --}}
-
-  
+  </div>
   <div class="col-sm-4">
    
     <div class="alert alert-success" role="alert">
-Conectate gratis  <a class="btn btn-lg btn-primary " id="gratis"  href="">Aquí</span></a>
+Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href=""><span id="countdown"></span></a>
     </div>
+    <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
 
 
     
-		<form name="login" action="" method="post" onSubmit="return doLogin()" >
+		<form class=""  name="login" action="" method="post" onSubmit="return doLogin()" >
 			<input type="hidden" name="dst" value="" />
 			<input type="hidden" name="popup" value="true" />
   
@@ -123,18 +121,17 @@ Conectate gratis  <a class="btn btn-lg btn-primary " id="gratis"  href="">Aquí<
  
   
   
- 
   
  
 </div>
 
 <div class="container text-center">    
   <h3></h3>
- 
+  <br>
   <div class=" text-center">
     <center>
       <div class=" ">
-      <img src="{{asset('img/logo.png')}}" class="img-responsive" style="width:15%" alt="Image">
+      <img src="{{asset('img/logo.png')}}"  style="width:55%" alt="Image">
         {{-- <p>Partner 1</p> --}}
       </div>
 
@@ -166,7 +163,7 @@ function carousel() {
   slideIndex++;
   if (slideIndex > x.length) {slideIndex = 1} 
   x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 3000); 
+  setTimeout(carousel, 4000); 
 }
 
 
@@ -178,73 +175,6 @@ function carousel() {
 
 
 <script src="{{asset('js/cuenta.js')}}"></script>
-
-
-{{-- 
- @if ($carruseles != null)
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        
-        @foreach ($carruseles as $key => $item)
-        <li data-target="#myCarousel" data-slide-to="{{$item->id}}" class="@if($key == 0)active @endif"></li>
-        @endforeach
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        @foreach ($carruseles as $key => $item)
-        
-        <div class="item @if($key == 0)active @endif" >
- 
-          <picture>
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 1400px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 768px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 576px; max-height: 30%;)">
-          
-          <img class="image" class="mh-100" srcset="{{asset($item->url_imagen)}}" style="
-           
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            margin: auto;
-          ">
-          </picture>
-            
-          
-         
-          <div class="carousel-caption">
-          
-          </div>      
-        </div>
-      
-        @endforeach
-       
-
-     
-      </div>
-    
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    @endif
-
-
-
-
-login ***********************************************************
-
-
-
---}}
 
 
 

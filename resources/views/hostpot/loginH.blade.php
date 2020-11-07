@@ -18,10 +18,16 @@
    $macesc=$_POST['mac-esc'];
   @endphp
 
-  <link rel="stylesheet" href="{{asset('/host/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
-  <script src="{{asset('/host/jquery.min.js')}}"></script>
-  <script src="{{asset('/host/js/bootstrap.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('/css/w3.css')}}">
+<script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
+<script src="{{asset('/js/v4/popper.min.js')}}"></script>
+<script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
+<link
+  rel="stylesheet"
+href="{{asset('/css/animate.min.css')}}"
+/>
+<script src='{{asset('/js/a076d05399.js')}}'></script>
   
 
 
@@ -32,9 +38,8 @@
       padding: 25px;
     }
 
-    .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      max-height: 450px;
+    .container {
+      margin-top: 1%;
     }
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -69,29 +74,7 @@
 	</script>
 <!-- $(endif) -->
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#"> </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        {{-- <li class="active"><a href="#">Home</a></li> --}}
-        <li><a href="#"></a></li>
-       {{--  <li><a href="#">Projects</a></li> --}}
-        <li><a href="#"></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> --}}
-      </ul>
-    </div>
-  </div>
-</nav>
+
 
 <div class="container">
 <div class="row">
@@ -115,7 +98,7 @@
 Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
     </div>
 <!-- $(endif) -->
-
+<a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
     <!-- removed $(if chap-id) $(endif)  around OnSubmit -->
 		<form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
 			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />
@@ -146,7 +129,7 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
 
   </div>
 </div>
-<hr>
+
 </div>
 
 <script type="text/javascript">
@@ -158,8 +141,7 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
  <div class="container text-center">   
 
  
-  
-  <br>
+
   <center>
     <div class="w3-content" style="max-width:400px">
 
@@ -230,71 +212,6 @@ function carousel() {
 <script src="{{asset('js/cuenta.js')}}"></script>
 
 
-{{-- 
- @if ($carruseles != null)
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        
-        @foreach ($carruseles as $key => $item)
-        <li data-target="#myCarousel" data-slide-to="{{$item->id}}" class="@if($key == 0)active @endif"></li>
-        @endforeach
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        @foreach ($carruseles as $key => $item)
-        
-        <div class="item @if($key == 0)active @endif" >
- 
-          <picture>
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 1400px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 768px;max-height: 30%;)">
-            <source srcset="{{asset($item->url_imagen)}}" media="(min-width: 576px; max-height: 30%;)">
-          
-          <img class="image" class="mh-100" srcset="{{asset($item->url_imagen)}}" style="
-           
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: center;
-            margin: auto;
-          ">
-          </picture>
-            
-          
-         
-          <div class="carousel-caption">
-          
-          </div>      
-        </div>
-      
-        @endforeach
-       
-
-     
-      </div>
-    
-
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    @endif
-
-
-
-
-login ***********************************************************
-
-
-
---}}
 
 
 
