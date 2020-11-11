@@ -20,7 +20,7 @@
                        
                         
                         <input type="file" class="form-control" name="file" 
-                        accept="image/png, image/jpeg">
+                        accept="image/png, image/jpeg, video/mp4,video/x-m4v,video/*">
                     </div>
                     
                      {{-- select de zonas --}}

@@ -57,11 +57,44 @@ href="{{asset('/css/animate.min.css')}}"
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login --}}
     <div class="w3-content w3-section" style="max-width:500px">
+        @php
+            $rad =rand(1,2);
+             echo $rad;
+        @endphp 
+
+        @if ($rad ==1)
         
-      @foreach ($carruseles->shuffle() as $item)
-      <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
-    
-       @endforeach
+        @foreach ($carruseles->shuffle() as $item)
+          @if ($item->url_imagen)
+              @php
+                  $extension = pathinfo($item->url_imagen)['extension']
+              @endphp
+              @if ($extension=="jpg"|| $extension =="jpeg" || $extension =='png' || $extension == 'jfif' ){{-- queda pendiente mas formatos de imagen --}}
+              <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
+                  
+              @else
+               
+                  
+              @endif
+              
+          @endif
+      
+         @endforeach
+        @else
+
+        @php
+            $video =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
+        @endphp
+        @foreach ($video as $i)
+        <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video'  controls     class="movie"> 
+          <script>
+            document.getElementById('video').play();
+        </script>
+        @endforeach
+
+        @endif
+
+
       
  
         </div>
