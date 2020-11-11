@@ -86,7 +86,7 @@ href="{{asset('/css/animate.min.css')}}"
             $video =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
         @endphp
         @foreach ($video as $i)
-        <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video'  controls     class="movie"> 
+        <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video' muted controls     class="movie"> 
           <script>
             document.getElementById('video').play();
         </script>
