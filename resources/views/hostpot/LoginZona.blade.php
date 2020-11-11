@@ -84,7 +84,9 @@ href="{{asset('/css/animate.min.css')}}"
 <div class="container">
 <div class="row">
   <div class="col-sm-7">
-    {{--  aqui va el baner a lado de login --}}
+    {{--  aqui va el baner a lado de login
+    <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
+     --}}
     <div class="w3-content w3-section" style="max-width:500px">
       @foreach ($carruseles->shuffle() as $item)
       <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
@@ -103,7 +105,7 @@ href="{{asset('/css/animate.min.css')}}"
 Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href="<?php echo $linkloginonly; ?>?dst=<?php echo $linkorigesc; ?>&username=T-<?php echo $macesc; ?>"><span id="countdown"></span></a>
     </div>
 <!-- $(endif) -->
-<a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
+
     <!-- removed $(if chap-id) $(endif)  around OnSubmit -->
 		<form name="login" action="<?php echo $linkloginonly; ?>" method="post" onSubmit="return doLogin()" >
 			<input type="hidden" name="dst" value="<?php echo $linkorig; ?>" />

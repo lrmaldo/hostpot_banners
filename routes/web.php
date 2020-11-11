@@ -56,3 +56,15 @@ Route::get('preview/{id}',function($id){
     
     return view('zona_preview',compact('carruseles'));
 });
+
+Route::get('alogin/{id}',function($id){
+    $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
+    
+    return view('hostpot.alogin',compact('carruseles'));
+});
+
+Route::get('alogin',function(){
+    $carruseles = App\Carrusel::all();
+    
+    return view('hostpot.alogin',compact('carruseles'));
+});

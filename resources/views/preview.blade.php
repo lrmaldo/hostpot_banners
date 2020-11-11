@@ -59,7 +59,7 @@ href="{{asset('/css/animate.min.css')}}"
     <div class="w3-content w3-section" style="max-width:500px">
         @php
             $rad =rand(1,2);
-             echo $rad;
+             //echo $rad;
         @endphp 
 
         @if ($rad ==1)
@@ -82,13 +82,27 @@ href="{{asset('/css/animate.min.css')}}"
          @endforeach
         @else
 
+        <script src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
+
         @php
             $video =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
         @endphp
         @foreach ($video as $i)
-        <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video' muted controls     class="movie"> 
+        <div id="app">
+          <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video'  controls  muted autoplay='autoplay'  class="movie"> 
+
+        </div>
           <script>
-            document.getElementById('video').play();
+
+                setTimeout(quitar,3000);
+           /*  if(document.getElementById('video').paused){
+           
+            console.log('play')
+            }
+            function quitar(){
+              $("video").prop('muted', false);
+              document.getElementById('video').play();
+            } */
         </script>
         @endforeach
 
