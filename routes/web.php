@@ -20,6 +20,8 @@ Route::POST('/post_hotspot','InicioController@host');
 /* ruta con filtro de zona  */
 
 Route::POST('/hotspot_zona/{id}','InicioController@hotspot_zona');
+
+Route::POST('/hotspot_zona_only_v/{id}','InicioController@hotspot_zona_video');/* video */
 Route::get('/login_hostpot','Iniciocontroller@loginHost');
 Route::get('/home', 'HomeController@index')->name('home');
 
