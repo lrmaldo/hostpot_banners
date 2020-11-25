@@ -70,3 +70,9 @@ Route::get('alogin',function(){
     
     return view('hostpot.alogin',compact('carruseles'));
 });
+
+Route::get('aloginImagen/{id}',function($id){
+    $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
+    
+    return view('hostpot.aloginConImagen',compact('carruseles'));
+});
