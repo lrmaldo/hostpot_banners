@@ -59,6 +59,14 @@ Route::get('preview/{id}',function($id){
     return view('zona_preview',compact('carruseles'));
 });
 
+/* solo video preview */
+
+Route::get('previewv/{id}',function($id){
+    $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
+    
+    return view('zona_previewv',compact('carruseles'));
+});
+
 Route::get('alogin/{id}',function($id){
     $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
     

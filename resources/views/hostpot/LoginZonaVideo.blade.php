@@ -86,13 +86,29 @@ href="{{asset('/css/animate.min.css')}}"
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login
     <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
-     --}}
-    <div class="w3-content w3-section" style="max-width:500px">
+     
+     
       @foreach ($carruseles->shuffle() as $item)
       <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
     
        @endforeach
+     
+     --}}
+    <div class="w3-content w3-section" style="max-width:500px">
       
+
+      @php
+          $video
+          =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
+          @endphp
+          @foreach ($video as $i)
+              <div id="app">
+                  <video src="{{ asset($i->url_imagen) }}" style="width: 100%; " id='video' controls muted
+                      autoplay='autoplay' class="movie">
+                      
+                    </div>
+                      <button type="button" id='sonido' onclick="quitar_muted()" class="btn btn-primary"> <i class="	fas fa-volume-up"></i> Activar sonido del video</button>
+          @endforeach
  
         </div>
 
@@ -189,34 +205,10 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
 </body>
 </html>
 
-<script>
-var slideIndex = 0;
-carousel();
 
 
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1} 
-  x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 4000); 
-}
-
-
-
-
-
-
-</script>
-
-
-<script src="{{asset('js/cuenta.js')}}"></script>
+<script src="{{asset('js/script_video.js')}}"></script> 
 
 
 

@@ -33,7 +33,27 @@
                         <div class="col-sm-7 ">
                             {{--  aqui va el baner a lado de login --}}
                            
+                            @foreach ($carruseles->shuffle() as $item)
+                            @if ($item->url_imagen)
                                 @php
+                                $extension = pathinfo($item->url_imagen)['extension']
+                                @endphp
+                                @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'jfif')
+                                    {{-- queda pendiente mas formatos de imagen
+                                    --}}
+                                    <img class="mySlides w3-animate-fading " src="{{ asset($item->url_imagen) }}"
+                                        style="width:100%;  max-height: 450px;">
+        
+                                @else
+        
+        
+                                @endif
+        
+                            @endif
+        
+                        @endforeach
+
+                                {{-- @php
                                 $rad =rand(1,2);
                                 //echo $rad;
                     
@@ -41,25 +61,7 @@
                     
                                 @if ($rad == 1)
                     
-                                    @foreach ($carruseles->shuffle() as $item)
-                                        @if ($item->url_imagen)
-                                            @php
-                                            $extension = pathinfo($item->url_imagen)['extension']
-                                            @endphp
-                                            @if ($extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'jfif')
-                                                {{-- queda pendiente mas formatos de imagen
-                                                --}}
-                                                <img class="mySlides w3-animate-fading " src="{{ asset($item->url_imagen) }}"
-                                                    style="width:100%;  max-height: 450px;">
-                    
-                                            @else
-                    
-                    
-                                            @endif
-                    
-                                        @endif
-                    
-                                    @endforeach
+                                   
                                 @else
                     
                                     <script src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
@@ -80,7 +82,7 @@
                                         </script>
                                     @endforeach
                     
-                                @endif
+                                @endif --}}
                             
                             
                         </div>
