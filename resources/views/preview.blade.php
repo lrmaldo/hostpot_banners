@@ -37,14 +37,46 @@ href="{{asset('/css/animate.min.css')}}"
     .container {
       margin-top: 1%;
     }
+     /* .mySlides {
+      position: relative;
+      height:40%;
+    } */
    
 
     /* Hide the carousel text when the screen is less than 600 pixels wide */
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none; 
-      }
-    }
+              @media screen and (max-width: 991px) {
+                  /* start of large tablet styles */
+                  .img-responsive {
+                    min-width: 70%;
+                    min-height: 40%;
+                    max-width: 100%;
+                   
+                  }
+              }
+
+          @media screen and (max-width: 767px) {
+                /* start of medium tablet styles */
+                /* Adding a fixed/percentage min-width could ensure that the image doesn't get too small */
+                .img-responsive {
+                  min-width: 30%;
+                  max-width: 100%;
+                  min-height: 40%;
+                 
+                }
+            }
+
+          @media screen and (max-width: 479px) {
+          /* start of phone styles */
+          /* It's possible to hide the image if the screen becomes too small */
+          .img-responsive {
+            min-width: 10%;
+            max-width: 100%;
+            min-height: 40%;
+          
+          }
+        
+}
+
   </style>
 </head>
 <body>
@@ -56,10 +88,11 @@ href="{{asset('/css/animate.min.css')}}"
 <div class="row">
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login --}}
-    <div class="w3-content w3-section" style="max-width:500px">
+    <div class="w3-content w3-section" style="width:100%; height:100%">
         @php
-            $rad =rand(1,2);
-             //echo $rad;
+            //$rad =rand(1,2);
+            $rad=1; 
+            //echo $rad;
         @endphp 
 
         @if ($rad ==1)
@@ -70,7 +103,11 @@ href="{{asset('/css/animate.min.css')}}"
                   $extension = pathinfo($item->url_imagen)['extension']
               @endphp
               @if ($extension=="jpg"|| $extension =="jpeg" || $extension =='png' || $extension == 'jfif' ){{-- queda pendiente mas formatos de imagen --}}
-              <img class="mySlides w3-animate-fading" src="{{asset($item->url_imagen)}}" style="width:100%;  max-height: 450px;">
+
+            
+              
+              <img class="mySlides w3-animate-fading img-responsive" src="{{asset($item->url_imagen)}}" >
+          
                   
               @else
                
@@ -82,7 +119,7 @@ href="{{asset('/css/animate.min.css')}}"
          @endforeach
         @else
 
-        <script src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
+       
 
         @php
             $video =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
@@ -94,15 +131,8 @@ href="{{asset('/css/animate.min.css')}}"
         </div>
           <script>
 
-                setTimeout(quitar,3000);
-           /*  if(document.getElementById('video').paused){
-           
-            console.log('play')
-            }
-            function quitar(){
-              $("video").prop('muted', false);
-              document.getElementById('video').play();
-            } */
+               
+         
         </script>
         @endforeach
 
@@ -150,7 +180,9 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
             <!-- $(endif) -->
       </form>
 
-   
+   <style>
+       
+   </style>
 
   </div>
 </div>
