@@ -8,6 +8,17 @@
       <meta name="author" content="Ing. Leonardo Maldonado López" />
     <!-- CSRF Token -->
     
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-04FYH8F9BQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-04FYH8F9BQ');
+</script>
+
+    
     <link rel="icon" type="image/x-icon" href="img/torre.ico" />
   @php
       $mac=$_POST['mac'];
@@ -218,16 +229,6 @@ function carousel() {
 
 <script src="{{asset('js/cuenta.js')}}"></script>
 
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-04FYH8F9BQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-04FYH8F9BQ');
-</script>
 
 
 
