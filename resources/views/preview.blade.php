@@ -88,60 +88,69 @@ href="{{asset('/css/animate.min.css')}}"
 <div class="row">
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login --}}
-    <div class="w3-content w3-section" style="width:100%; height:100%">
-        @php
-            //$rad =rand(1,2);
-            $rad=1; 
-            //echo $rad;
-        @endphp 
+    <style>
 
-        @if ($rad ==1)
+      .square {
+        position: relative;
+        width: 100%;
         
-        @foreach ($carruseles->shuffle() as $item)
-          @if ($item->url_imagen)
-              @php
-                  $extension = pathinfo($item->url_imagen)['extension']
-              @endphp
-              @if ($extension=="jpg"|| $extension =="jpeg" || $extension =='png' || $extension == 'jfif' ){{-- queda pendiente mas formatos de imagen --}}
+      }
 
-            
-              
-              <img class="mySlides w3-animate-fading img-responsive" src="{{asset($item->url_imagen)}}" >
-          
-                  
-              @else
-               
-                  
-              @endif
-              
-          @endif
-      
-         @endforeach
-        @else
-
+      .square:after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
        
+      }
 
-        @php
-            $video =App\Carrusel::where('activo','=',1)->where('url_imagen','like','%.mp4%')->orderByRaw('rand()')->take(1)->get();
-        @endphp
-        @foreach ($video as $i)
-        <div id="app">
-          <video src="{{asset($i->url_imagen)}}"  style="width: 100%; " id='video'  controls  muted autoplay='autoplay'  class="movie"> 
-
-        </div>
-          <script>
-
-               
-         
-        </script>
-        @endforeach
-
-        @endif
-
-
+      .content {
+        position: absolute;
+        width: 100%; 
+        height: 90%;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        
+      }
+      .img-responsive{
+        max-height: 90%;
+      }
+  </style>  
+  <div class="w3-content w3-section" style="width:100%; ">
+      <div class="square"> 
+        <div class="content"> 
+        
       
- 
-        </div>
+      
+   
+
+            @foreach ($carruseles->shuffle() as $item)
+            @if ($item->url_imagen)
+                @php
+                    $extension = pathinfo($item->url_imagen)['extension']
+                @endphp
+                @if ($extension=="jpg"|| $extension =="jpeg" || $extension =='png' || $extension == 'jfif' ){{-- queda pendiente mas formatos de imagen --}}
+
+              
+              
+                {{-- imagen  --}}
+
+                <img class="mySlides w3-animate-fading img-responsive " width="100%" src="{{asset($item->url_imagen)}}" >
+              
+                    
+                @else
+                
+                    
+                @endif
+                
+            @endif
+        
+          @endforeach
+      </div> 
+    </div>
+        
+  
+  </div>
 
 
     
