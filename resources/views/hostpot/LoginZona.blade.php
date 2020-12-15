@@ -36,6 +36,7 @@
 
 <link rel="stylesheet" href="{{asset('/css/v4/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('/css/w3.css')}}">
+<link rel="stylesheet" href="{{asset('/css/estilo_login.css')}}">
 <script src="{{asset('/js/v4/jquery-3.2.1.slim.min.js')}}"></script>
 <script src="{{asset('/js/v4/popper.min.js')}}"></script>
 <script src="{{asset('/js/v4/bootstrap.min.js')}}"></script>
@@ -47,24 +48,6 @@ href="{{asset('/css/animate.min.css')}}"
   
 
 
-  <style>
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-
-    .container {
-      margin-top: 1%;
-    }
-
-    /* Hide the carousel text when the screen is less than 600 pixels wide */
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none; 
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- $(if chap-id) -->
@@ -97,34 +80,7 @@ href="{{asset('/css/animate.min.css')}}"
 <div class="container">
 <div class="row">
 
-  <style>
 
-.square {
-  position: relative;
-  width: 100%;
-  
-}
-
-.square:after {
-  content: '';
-  display: block;
-  padding-bottom: 100%;
- 
-}
-
-.content {
-  position: absolute;
-  width: 100%; 
-  height: 90%;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  
-}
-.img-responsive{
-  max-height: 90%;
-}
-</style>
   <div class="col-sm-7">
     {{--  aqui va el baner a lado de login
     <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio residencial</a>
