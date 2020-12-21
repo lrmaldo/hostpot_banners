@@ -49,22 +49,22 @@ Route::get('politica',function(){
 
 Route::get('preview',function(){
     $carruseles = App\Carrusel::all();
-    
-    return view('preview',compact('carruseles'));
+    $id_zona = 0;
+    return view('preview',compact('carruseles','id_zona'));
 });
 
 Route::get('preview/{id}',function($id){
     $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
-    
-    return view('zona_preview',compact('carruseles'));
+    $id_zona = $id;
+    return view('zona_preview',compact('carruseles','id_zona'));
 });
 
 /* solo video preview */
 
 Route::get('previewv/{id}',function($id){
     $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
-    
-    return view('zona_previewv',compact('carruseles'));
+    $id_zona = $id;
+    return view('zona_previewv',compact('carruseles','id_zona'));
 });
 
 Route::get('alogin/{id}',function($id){

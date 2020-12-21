@@ -8,7 +8,18 @@
       <meta name="author" content="Ing. Leonardo Maldonado López" />
     <!-- CSRF Token -->
     
-<!-- Global site tag (gtag.js) - Google Analytics -->
+@if ($id_zona==4)
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FCMF93KPT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3FCMF93KPT');
+</script>
+@else
+  <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-04FYH8F9BQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -16,7 +27,10 @@
   gtag('js', new Date());
 
   gtag('config', 'G-04FYH8F9BQ');
-</script>
+</script>  
+@endif
+
+
 
     
     <link rel="icon" type="image/x-icon" href="img/torre.ico" />

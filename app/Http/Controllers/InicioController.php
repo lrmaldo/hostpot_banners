@@ -120,7 +120,8 @@ class InicioController extends Controller
 
    public function hotspot_zona($id){
     $carruseles = Carrusel::where('zona_id',$id)->get();
-    return view('hostpot.LoginZona',compact('carruseles'));
+    $id_zona = $id;
+    return view('hostpot.LoginZona',compact('carruseles','id_zona'));
    }
 
    public function hotspot_zona_video($id){
