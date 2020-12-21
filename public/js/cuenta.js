@@ -11,7 +11,7 @@ window.onload = updateClock;
 })
 
 //document.getElementById("gratis").disabled = true;
-var totalTime = 10;
+var totalTime = 15;
 function updateClock() {
 document.getElementById('countdown').innerHTML = totalTime;
 if(totalTime==0){
