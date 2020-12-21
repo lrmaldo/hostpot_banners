@@ -21,7 +21,7 @@ $("#gratis").removeClass("disabled");
   $('#myModal').modal('hide')
 }else{
 totalTime-=1;
-setTimeout("updateClock()",1000);
+setTimeout("updateClock()",1500);
 }
 }
 
