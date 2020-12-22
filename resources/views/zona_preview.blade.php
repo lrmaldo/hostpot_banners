@@ -56,7 +56,7 @@ href="{{asset('/css/animate.min.css')}}"
   
 <div class="container">
     <div class="alert alert-success" role="alert">
- <strong> <h3 class="text-center">Vista previa </h3></strong>
+ <strong> <h3 class="text-center">Vista previa {{$id_zona}} </h3></strong>
     </div>
 <div class="row">
 

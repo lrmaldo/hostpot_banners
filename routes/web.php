@@ -81,6 +81,6 @@ Route::get('alogin',function(){
 
 Route::get('aloginImagen/{id}',function($id){
     $carruseles = App\Carrusel::where('zona_id','=',$id)->where('activo','=',1)->get();
-    
-    return view('hostpot.aloginConImagen',compact('carruseles'));
+    $id_zona = $id;
+    return view('hostpot.aloginConImagen',compact('carruseles','id_zona'));
 });
