@@ -180,7 +180,13 @@ href="{{asset('/css/animate.min.css')}}"
     <div class="alert alert-success" role="alert">
 Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  href=""><span id="countdown"></span></a>
     </div>
-    <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio Residencial</a>
+    {{-- <a href="https://chat.whatsapp.com/G33tHdDoSWuLKfnUl3zrWn" class="btn btn-sm btn-success animate__animated animate__headShake animate__infinite	infinite"><i class='fab fa-whatsapp' style='font-size:18px'></i> Quiero contratar servicio Residencial</a> --}}
+   {{--  
+    <fb:login-button 
+    scope="public_profile,email"
+    onlogin="checkLoginState();">
+    </fb:login-button> --}}
+    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
 
 
     
@@ -251,6 +257,36 @@ Conectate gratis en:  <a class="btn btn-lg btn-primary disabled" id="gratis"  hr
 <footer class="container-fluid text-center">
   <p> Av. Francisco I. Madero Lote 10, Departamento 5 Tercer Piso, Fracc. Los Angeles 1a Etapa C.P. 68370 Tuxtepec, Oaxaca <a href="tel:2878756019">(287)8756019</a></p>
 </footer>
+
+{{-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '167968248406568',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v9.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/es_ES/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+   FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+</script> --}}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v9.0&appId=167968248406568&autoLogAppEvents=1" nonce="x13cXpvr"></script>
+
 
 </body>
 </html>

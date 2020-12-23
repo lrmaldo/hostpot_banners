@@ -29,6 +29,7 @@ href="{{asset('/css/animate.min.css')}}"
   />
 <script src='{{asset('/js/a076d05399.js')}}'></script>
 @if ($id_zona==4)
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FCMF93KPT"></script>
 <script>
