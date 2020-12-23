@@ -33,7 +33,7 @@
 
 
     
-    <link rel="icon" type="image/x-icon" href="img/torre.ico" />
+  <link rel="icon" type="image/x-icon" href="img/torre.ico" />
   @php
       $mac=$_POST['mac'];
    $ip=$_POST['ip'];
